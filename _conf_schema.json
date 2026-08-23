@@ -1,0 +1,62 @@
+{
+  "schedule_time": {
+    "description": "每天发送时间 (HH:MM，服务器时区 Asia/Shanghai)",
+    "type": "string",
+    "default": "21:00",
+    "hint": "建议设置在晚上，如 21:00"
+  },
+  "jitter_minutes": {
+    "description": "时间抖动窗口（分钟）",
+    "type": "int",
+    "default": 30,
+    "hint": "在设定时间后 0~N 分钟内随机开始，避免每天同一秒发送触发风控"
+  },
+  "send_gap_min": {
+    "description": "好友间最小间隔（秒）",
+    "type": "int",
+    "default": 6,
+    "hint": "相邻两个好友之间的最小发送间隔"
+  },
+  "send_gap_max": {
+    "description": "好友间最大间隔（秒）",
+    "type": "int",
+    "default": 12,
+    "hint": "相邻两个好友之间的最大发送间隔"
+  },
+  "max_friends_per_run": {
+    "description": "每次最多发送好友数",
+    "type": "int",
+    "default": 20,
+    "hint": "0 表示不限制，建议设置为 10-20 以防风控"
+  },
+  "friends": {
+    "description": "续火花好友列表",
+    "type": "list",
+    "default": [],
+    "hint": "每行一个好友名（聊天列表里显示的备注/昵称/抖音号）"
+  },
+  "messages": {
+    "description": "消息模板库",
+    "type": "list",
+    "default": ["🔥 续火花", "晚安，明天见", "今天也要开心哦"],
+    "hint": "每行一条，每次随机选择一条发送"
+  },
+  "auto_retry": {
+    "description": "启用当日自动补发",
+    "type": "bool",
+    "default": true,
+    "hint": "本轮有失败时，约 45 分钟后只对失败好友补发一次"
+  },
+  "headless": {
+    "description": "无头模式运行浏览器",
+    "type": "bool",
+    "default": true,
+    "hint": "服务器部署请保持开启"
+  },
+  "browser_args": {
+    "description": "浏览器启动参数",
+    "type": "list",
+    "default": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage", "--disable-gpu"],
+    "hint": "通常无需修改，低内存服务器需保留 --disable-dev-shm-usage"
+  }
+}

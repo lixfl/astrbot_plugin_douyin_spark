@@ -1,0 +1,3 @@
+playwright>=1.45
+apscheduler>=3.10
+pydantic>=2.6
