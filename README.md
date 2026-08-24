@@ -118,6 +118,10 @@ python -m core.extract_cookie
 - [DouYinSparkFlow](https://github.com/2061360308/DouYinSparkFlow)
 - [TikTokAutoSparkWeb](https://github.com/DkoBot/TikTokAutoSparkWeb)
 
+## 作者
+
+**小风铃**
+
 ## License
 
 [MIT](./LICENSE)
