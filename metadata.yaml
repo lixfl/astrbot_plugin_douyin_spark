@@ -2,7 +2,7 @@ name: "douyin_spark"
 author: "小风铃"
 desc: "抖音续火花助手 - 自托管的抖音「续火花」自动化工具，部署在自己的服务器上，每天定时自动给指定好友发送私信，维持聊天火花（🔥）不熄灭"
 short_desc: "抖音续火花自动化助手"
-version: "1.0.1"
+version: "1.0.2"
 repo: "https://github.com/Xiaowu-0916/douyin-spark"
 display_name: "抖音续火花助手"
 support_platforms:
