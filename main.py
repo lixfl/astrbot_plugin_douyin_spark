@@ -357,8 +357,8 @@ class DouyinSparkPlugin(Star):
 
     # ==================== 命令处理 ====================
 
-    @CommandFilter("续火花扫码登录", alias={"spark_qr_login", "扫码登录"})
     @register_custom_filter(PermissionTypeFilter, PermissionType.ADMIN)
+    @CommandFilter("续火花扫码登录", alias={"spark_qr_login", "扫码登录"})
     async def cmd_qr_login(self, event: AstrMessageEvent) -> None:
         """启动二维码登录（需服务器有图形界面或 Xvfb）"""
         if self._run_lock.locked():
@@ -383,8 +383,8 @@ class DouyinSparkPlugin(Star):
 
         threading.Thread(target=worker, daemon=True).start()
 
-    @CommandFilter("续火花状态", alias={"spark_status", "火花状态"})
     @register_custom_filter(PermissionTypeFilter, PermissionType.ADMIN)
+    @CommandFilter("续火花状态", alias={"spark_status", "火花状态"})
     async def cmd_status(self, event: AstrMessageEvent) -> None:
         """查看续火花运行状态"""
         rt = load_runtime()
@@ -420,8 +420,8 @@ class DouyinSparkPlugin(Star):
 
         await event.reply("\n".join(msg))
 
-    @CommandFilter("续火花发送", alias={"spark_send", "发送火花"})
     @register_custom_filter(PermissionTypeFilter, PermissionType.ADMIN)
+    @CommandFilter("续火花发送", alias={"spark_send", "发送火花"})
     async def cmd_send(self, event: AstrMessageEvent) -> None:
         """立即发送续火花消息"""
         if self._run_lock.locked():
@@ -431,8 +431,8 @@ class DouyinSparkPlugin(Star):
         await event.reply("🚀 启动发送任务...")
         self._run_send_wrapper(dry_run=False)
 
-    @CommandFilter("续火花测试", alias={"spark_dry", "干跑测试"})
     @register_custom_filter(PermissionTypeFilter, PermissionType.ADMIN)
+    @CommandFilter("续火花测试", alias={"spark_dry", "干跑测试"})
     async def cmd_dry_run(self, event: AstrMessageEvent) -> None:
         """干跑测试（不真实发送）"""
         if self._run_lock.locked():
@@ -442,8 +442,8 @@ class DouyinSparkPlugin(Star):
         await event.reply("🧪 启动干跑测试...")
         self._run_send_wrapper(dry_run=True)
 
-    @CommandFilter("续火花获取好友", alias={"spark_fetch", "获取好友列表"})
     @register_custom_filter(PermissionTypeFilter, PermissionType.ADMIN)
+    @CommandFilter("续火花获取好友", alias={"spark_fetch", "获取好友列表"})
     async def cmd_fetch_contacts(self, event: AstrMessageEvent) -> None:
         """从抖音获取聊天列表好友"""
         if not self.state_path.exists():
@@ -471,8 +471,8 @@ class DouyinSparkPlugin(Star):
 
         threading.Thread(target=worker, daemon=True).start()
 
-    @CommandFilter("续火花好友", alias={"spark_friends", "火花好友"})
     @register_custom_filter(PermissionTypeFilter, PermissionType.ADMIN)
+    @CommandFilter("续火花好友", alias={"spark_friends", "火花好友"})
     async def cmd_list_friends(self, event: AstrMessageEvent) -> None:
         """查看已配置的续火花好友"""
         rt = load_runtime()
@@ -499,8 +499,8 @@ class DouyinSparkPlugin(Star):
 
         await event.reply("\n".join(msg))
 
-    @CommandFilter("续火花设置", alias={"spark_config", "火花设置"})
     @register_custom_filter(PermissionTypeFilter, PermissionType.ADMIN)
+    @CommandFilter("续火花设置", alias={"spark_config", "火花设置"})
     async def cmd_config(self, event: AstrMessageEvent) -> None:
         """查看当前配置"""
         cfg = self.config
@@ -517,8 +517,8 @@ class DouyinSparkPlugin(Star):
         ]
         await event.reply("\n".join(msg))
 
-    @CommandFilter("续火花上传登录态", alias={"spark_upload", "上传state"})
     @register_custom_filter(PermissionTypeFilter, PermissionType.ADMIN)
+    @CommandFilter("续火花上传登录态", alias={"spark_upload", "上传state"})
     async def cmd_upload_state(self, event: AstrMessageEvent) -> None:
         """上传登录态 (请在网页配置页面操作)"""
         await event.reply(
@@ -528,8 +528,8 @@ class DouyinSparkPlugin(Star):
             "3. 或使用命令：/续火花上传 state.json (需配合文件上传)"
         )
 
-    @CommandFilter("续火花帮助", alias={"spark_help", "火花帮助"})
     @register_custom_filter(PermissionTypeFilter, PermissionType.ADMIN)
+    @CommandFilter("续火花帮助", alias={"spark_help", "火花帮助"})
     async def cmd_help(self, event: AstrMessageEvent) -> None:
         """显示帮助信息"""
         msg = [
